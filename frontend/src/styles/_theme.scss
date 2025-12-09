@@ -1,0 +1,68 @@
+@use './_variables.scss' as *;
+
+// 主题mixin
+@mixin light-theme {
+  --color-primary: #{$primary-color};
+  --color-success: #{$success-color};
+  --color-warning: #{$warning-color};
+  --color-danger: #{$danger-color};
+  --color-info: #{$info-color};
+  
+  --color-background-primary: #{$light-background-primary};
+  --color-background-soft: #{$light-background-soft};
+  --color-background-mute: #{$light-background-mute};
+  
+  --color-text-primary: #{$light-text-primary};
+  --color-text-regular: #{$light-text-regular};
+  --color-text-secondary: #{$light-text-secondary};
+  --color-text-placeholder: #{$light-text-placeholder};
+  
+  --color-border: #{$light-border-color};
+  --color-shadow: #{$light-shadow};
+}
+
+@mixin dark-theme {
+  --color-primary: #{$primary-color};
+  --color-success: #{$success-color};
+  --color-warning: #{$warning-color};
+  --color-danger: #{$danger-color};
+  --color-info: #{$info-color};
+  
+  --color-background-primary: #{$dark-background-primary};
+  --color-background-soft: #{$dark-background-soft};
+  --color-background-mute: #{$dark-background-mute};
+  
+  --color-text-primary: #{$dark-text-primary};
+  --color-text-regular: #{$dark-text-regular};
+  --color-text-secondary: #{$dark-text-secondary};
+  --color-text-placeholder: #{$dark-text-placeholder};
+  
+  --color-border: #{$dark-border-color};
+  --color-shadow: #{$dark-shadow};
+}
+
+// 默认应用浅色主题
+:root {
+  @include light-theme;
+}
+
+// 深色主题
+.dark-theme {
+  @include dark-theme;
+}
+
+// 主题切换mixin
+@mixin theme-background($type: 'soft') {
+  background-color: var(--color-background-#{$type});
+  transition: background-color $transition-regular ease;
+}
+
+@mixin theme-text($type: 'regular') {
+  color: var(--color-text-#{$type});
+  transition: color $transition-regular ease;
+}
+
+@mixin theme-border {
+  border-color: var(--color-border);
+  transition: border-color $transition-regular ease;
+}

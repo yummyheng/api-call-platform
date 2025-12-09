@@ -1,0 +1,184 @@
+@use '../../../styles/_variables.scss' as *;
+@use '../../../styles/_theme.scss' as *;
+
+// 节点内容容器
+.tree-node-content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 4px 0;
+  font-size: $font-size-regular;
+}
+
+// HTTP方法文本样式
+.method-text {
+  display: inline-block;
+  margin-right: 6px;
+  font-size: $font-size-regular;
+  font-weight: 500;
+  color: var(--color-primary);
+  padding: 2px 4px;
+  border-radius: 3px;
+  text-align: center;
+  min-width: 50px;
+
+  &.GET { background-color: $success-color; color: white; }
+  &.POST { background-color: $primary-color; color: white; }
+  &.PUT { background-color: $warning-color; color: white; }
+  &.DELETE { background-color: $danger-color; color: white; }
+  &.PATCH { background-color: #9C27B0; color: white; }
+  &.OPTIONS { background-color: #795548; color: white; }
+  &.HEAD { background-color: #607D8B; color: white; }
+}
+
+// 节点标签样式
+.node-label {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// 测试用例URL样式
+.test-case-url {
+  font-size: $font-size-small;
+  color: var(--color-text-regular);
+  margin-left: 4px;
+}
+
+// 隐藏叶子节点的展开图标
+:deep(.el-tree-node__expand-icon.is-leaf) {
+  display: none;
+}
+
+// 组件特定的布局样式
+.api-tree-container {
+  width: 100%;
+  height: 100%;
+  padding: $spacing-regular;
+  overflow: auto;
+  min-width: 320px;
+}
+
+// 树组件样式
+.api-tree {
+  height: 100%;
+  overflow-y: auto;
+  padding: 8px;
+  background: transparent;
+  font-size: $font-size-regular;
+}
+
+// 深色模式样式适配
+.dark-theme {
+  .api-tree-container,
+  .api-tree {
+    background-color: transparent !important;
+  }
+
+  // 覆盖所有Element UI树组件相关元素
+  .el-tree,
+  .el-tree *,
+  .el-tree-node,
+  .el-tree-node__content,
+  .el-tree-node__children,
+  .el-tree__empty-block,
+  .el-tree__empty-text,
+  .el-tree__placeholder,
+  .el-tree-node__expand-icon,
+  .el-tree-node__loading-icon,
+  .el-tree-node__expand-icon.is-leaf {
+    background-color: transparent !important;
+    background-image: none !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  // 确保所有文本颜色在暗色模式下正确显示
+  .el-tree {
+    color: var(--color-text-primary) !important;
+  }
+
+  .el-tree-node__content {
+    color: var(--color-text-primary) !important;
+    background-color: transparent !important;
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.05) !important;
+    }
+  }
+
+  .el-tree-node.is-current > .el-tree-node__content {
+    background-color: rgba(64, 158, 255, 0.1) !important;
+    color: var(--color-primary) !important;
+  }
+
+  .el-tree-node__expand-icon {
+    color: var(--color-text-secondary) !important;
+  }
+
+  .el-tree__empty-text,
+  .el-tree__placeholder {
+    color: var(--color-text-secondary) !important;
+  }
+
+  // 节点标签、HTTP方法文本和测试用例URL在暗色模式下的样式
+  .node-label {
+    color: var(--color-text-primary) !important;
+  }
+
+  .method-text {
+    color: white !important;
+  }
+
+  .test-case-url {
+    color: var(--color-text-secondary) !important;
+  }
+
+  // 清除所有可能的背景图片
+  .el-tree *,
+  .api-tree * {
+    background-image: none !important;
+  }
+
+  // 确保节点内容容器也具有透明背景
+  .tree-node-content {
+    background-color: transparent !important;
+  }
+
+  // 深色模式下隐藏叶子节点的展开图标
+  .el-tree-node__expand-icon.is-leaf {
+    display: none !important;
+  }
+
+  // 确保深色模式下树节点的缩进与白天模式保持一致
+  .el-tree-node__content {
+    padding-left: 0 !important;
+  }
+  
+  .el-tree-node {
+    .el-tree-node {
+      > .el-tree-node__content {
+        padding-left: 20px !important;
+      }
+      
+      .el-tree-node {
+        > .el-tree-node__content {
+          padding-left: 40px !important;
+        }
+        
+        .el-tree-node {
+          > .el-tree-node__content {
+            padding-left: 60px !important;
+          }
+          
+          .el-tree-node {
+            > .el-tree-node__content {
+              padding-left: 80px !important;
+            }
+          }
+        }
+      }
+    }
+  }
+}

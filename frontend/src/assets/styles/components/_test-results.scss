@@ -1,0 +1,102 @@
+@use '../../../styles/_variables.scss' as *;
+@use '../../../styles/_theme.scss' as *;
+@use '../../../styles/_global.scss' as *;
+
+// 测试结果容器
+.test-results-container {
+  height: 100%;
+  overflow: auto;
+  padding: $spacing-regular;
+}
+
+
+
+// 成功和失败状态颜色
+.success { color: $success-color; }
+.error { color: $danger-color; }
+
+// 请求和响应信息容器
+.request-info,
+.response-info {
+  padding: $spacing-regular 0;
+}
+
+// 信息行
+.info-row {
+  margin-bottom: $spacing-regular;
+  padding: $spacing-regular;
+  @include theme-background;
+  border-radius: $border-radius-medium;
+  border: 1px solid var(--color-border);
+  transition: all $transition-regular ease;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  pre {
+    @extend .json-preview-container;
+    margin: 0;
+  }
+}
+
+// 组件特定信息标签样式覆盖
+.info-label {
+  width: 80px;
+  margin-bottom: $spacing-small;
+}
+
+// 空结果提示
+.empty-tip {
+  margin-top: $spacing-regular;
+  color: var(--color-text-secondary);
+  font-size: $font-size-regular;
+}
+
+// Response Body容器样式
+.response-body-container {
+  max-height: 100px; // 设置最大高度
+  overflow-y: auto; // 垂直滚动
+  overflow-x: auto; // 水平滚动
+  white-space: pre-wrap; // 保持换行
+  word-break: break-all; // 单词换行
+  font-family: 'Courier New', Courier, monospace; // 等宽字体
+  font-size: $font-size-small; // 较小字体
+  line-height: 30px; // 行高
+  color: var(--color-text-primary); // 文本颜色
+  padding: $spacing-small; // 内边距
+  background-color: var(--color-background-light); // 背景色
+  border-radius: $border-radius-small; // 圆角
+  border: 1px solid var(--color-border); // 边框
+}
+
+// 深色模式样式 - 现在通过主题系统统一处理
+// .dark-theme 相关样式已移除，使用主题变量自动适配
+
+// 选中行样式
+.selected-row {
+  background-color: var(--color-primary) !important;
+}
+
+// 组件特定的布局样式
+.results-container {
+  width: 100%;
+  height: 100%;
+  padding: $spacing-regular;
+  overflow: auto;
+  font-size: $font-size-regular;
+  background-color: transparent;
+}
+
+// 测试结果标题
+.results-title {
+  font-size: $font-size-medium;
+  font-weight: bold;
+  margin-bottom: $spacing-regular;
+  @include theme-text;
+}
+
+// 结果详情区域
+.results-content {
+  width: 100%;
+}

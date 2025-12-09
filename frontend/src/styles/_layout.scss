@@ -1,0 +1,111 @@
+@use './_variables.scss' as *;
+@use './_theme.scss' as *;
+
+// 应用容器
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  @include theme-background;
+  @include theme-text;
+  transition: background-color $transition-regular ease, color $transition-regular ease;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* 防止出现滚动条 */
+}
+
+// 头部
+.header {
+  @include theme-background;
+  padding: $spacing-regular $spacing-medium;
+  box-shadow: var(--color-shadow);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+
+  h1 {
+    font-size: $font-size-xl;
+    font-weight: 600;
+    @include theme-text;
+    margin: 0;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+// 主内容区域
+.main-content,
+.main-container {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+  width: 100%;
+  justify-content: stretch;
+}
+
+// 侧边栏
+.sidebar,
+.api-tree-container {
+  width: 360px;
+  min-width: 360px;
+  @include theme-background;
+  border-right: 1px solid var(--color-border);
+  overflow: hidden;
+  transition: background-color $transition-regular ease, border-color $transition-regular ease;
+}
+
+// 内容区域
+.content,
+.content-container {
+  flex: 1;
+  flex-grow: 1;
+  @include theme-background;
+  margin: 10px;
+  border-radius: $border-radius-regular;
+  padding: $spacing-medium;
+  overflow-y: auto; /* 允许垂直滚动 */
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-medium;
+  transition: background-color $transition-regular ease;
+  min-width: 0; /* 防止内容溢出，确保可以适应更宽的侧边栏 */
+}
+
+// 测试结果区域
+.test-results-section {
+  @include theme-background;
+  border-radius: $border-radius-regular;
+  border: 1px solid var(--color-border);
+  padding: 15px;
+  transition: all $transition-regular ease;
+}
+
+// 右侧工具面板
+.tools-panel-container {
+  width: 300px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  @include theme-background;
+  box-shadow: var(--color-shadow);
+  position: relative;
+  z-index: 10;
+
+  &.collapsed {
+    width: 0;
+  }
+}
+
+.tools-panel {
+  flex: 1;
+  padding: $spacing-regular;
+  overflow: auto;
+  width: 100%;
+}

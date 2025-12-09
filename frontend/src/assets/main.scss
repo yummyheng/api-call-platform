@@ -1,0 +1,43 @@
+@use "./base.scss" as *;
+
+#app {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  border: none;
+  font-weight: normal;
+  background-color: var(--color-background);
+}
+
+/* Remove all default borders */
+* {
+  border: none !important;
+}
+
+/* TODO: 已移至ApiTreeData.vue组件中，避免样式冗余 */
+/* API路径样式由组件内部管理，使用动态样式绑定 */
+
+a {
+  text-decoration: none;
+  color: hsla(160, 100%, 37%, 1);
+  transition: 0.4s;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: hsla(160, 100%, 37%, 0.2);
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+  }
+
+  #app {
+    width: 100%;
+    padding: 0 2rem;
+  }
+}

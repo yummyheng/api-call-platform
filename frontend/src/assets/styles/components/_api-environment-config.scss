@@ -1,0 +1,150 @@
+/* 环境配置组件样式 */
+.api-environment-config {
+  padding: 10px;
+  height: calc(100vh - 60px);
+  overflow-y: auto;
+
+  /* 卡片样式 */
+  .modern-card {
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ebeef5;
+
+    /* 卡片头部样式 */
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 10px;
+
+      h3 {
+        font-size: 18px;
+        font-weight: 600;
+        color: #303133;
+        margin: 0;
+      }
+
+      .card-header-actions {
+        display: flex;
+        gap: 10px;
+      }
+    }
+
+    /* 环境列表样式 */
+    .environment-list-section {
+      margin-top: 20px;
+
+      .el-table {
+        border-radius: 4px;
+        overflow: hidden;
+
+        .el-table__header-wrapper {
+          .el-table__header {
+            th {
+              background-color: #f5f7fa;
+              color: #606266;
+              font-weight: 600;
+              border-bottom: 1px solid #ebeef5;
+            }
+          }
+        }
+
+        .el-table__body-wrapper {
+          .el-table__body {
+            td {
+              border-bottom: 1px solid #ebeef5;
+              padding: 12px 0;
+            }
+          }
+        }
+
+        /* 操作按钮组样式 */
+        .el-button-group {
+          display: flex;
+          gap: 5px;
+        }
+      }
+    }
+  }
+
+  /* 对话框样式 */
+  .el-dialog {
+    border-radius: 8px;
+    overflow: hidden;
+
+    .el-dialog__header {
+      background-color: #f5f7fa;
+      padding: 15px 20px;
+      border-bottom: 1px solid #ebeef5;
+
+      .el-dialog__title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #303133;
+      }
+    }
+
+    .el-dialog__body {
+      padding: 20px;
+    }
+
+    .el-dialog__footer {
+      padding: 15px 20px;
+      border-top: 1px solid #ebeef5;
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+  }
+
+  /* 表单样式 */
+  .el-form {
+    .el-form-item {
+      margin-bottom: 15px;
+
+      .el-form-item__label {
+        font-weight: 500;
+        color: #303133;
+      }
+
+      .el-input {
+        width: 100%;
+      }
+    }
+  }
+
+  /* 表格样式 */
+  .el-table {
+    margin-top: 10px;
+    border: 1px solid #ebeef5;
+    border-radius: 4px;
+
+    .el-table__header-wrapper {
+      .el-table__header {
+        th {
+          background-color: #f5f7fa;
+          color: #606266;
+          font-weight: 500;
+        }
+      }
+    }
+
+    .el-table__body-wrapper {
+      .el-table__body {
+        td {
+          border-bottom: 1px solid #ebeef5;
+        }
+      }
+    }
+  }
+
+  /* 按钮样式 */
+  .el-button {
+    margin-right: 5px;
+  }
+
+  /* 开关样式 */
+  .el-switch {
+    margin-top: 6px;
+  }
+}

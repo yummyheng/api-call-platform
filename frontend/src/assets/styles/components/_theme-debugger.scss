@@ -1,0 +1,37 @@
+@use '../../../styles/_variables.scss' as *;
+
+/* 主题切换器容器 */
+.theme-switcher {
+  margin: var(--theme-spacing-lg) 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* 主题切换按钮 */
+.theme-toggle-btn {
+  padding: var(--theme-spacing-base) var(--theme-spacing-xl);
+  border: 2px solid var(--theme-border-primary);
+  border-radius: var(--theme-border-radius-full);
+  background-color: var(--theme-bg-primary);
+  color: var(--theme-text-primary);
+  font-size: var(--theme-font-size-base);
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--theme-transition-medium) ease;
+  box-shadow: var(--theme-shadow-sm);
+
+  /* 主题切换按钮悬停效果 */
+  &:hover {
+    background-color: var(--theme-bg-hover);
+    border-color: var(--theme-color-primary);
+    transform: translateY(-1px);
+    box-shadow: var(--theme-shadow-md);
+  }
+
+  /* 主题切换按钮激活状态 */
+  &.active {
+    background-color: var(--theme-color-primary);
+    color: white;
+    border-color: var(--theme-color-primary);
+  }
+}

@@ -1,0 +1,51 @@
+// 主题颜色变量
+$primary-color: #409EFF;
+$success-color: #67C23A;
+$warning-color: #E6A23C;
+$danger-color: #F56C6C;
+$info-color: #909399;
+
+// 浅色主题变量
+$light-background-primary: #ffffff;
+$light-background-soft: #f5f7fa;
+$light-background-mute: #e4e7ed;
+$light-text-primary: rgba(0, 0, 0, 0.88);
+$light-text-regular: rgba(0, 0, 0, 0.64);
+$light-text-secondary: rgba(0, 0, 0, 0.48);
+$light-text-placeholder: rgba(0, 0, 0, 0.32);
+$light-border-color: #dcdfe6;
+$light-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
+// 深色主题变量
+$dark-background-primary: #1a1a1a;
+$dark-background-soft: #222222;
+$dark-background-mute: #303030;
+$dark-text-primary: rgba(255, 255, 255, 0.88);
+$dark-text-regular: rgba(255, 255, 255, 0.64);
+$dark-text-secondary: rgba(255, 255, 255, 0.48);
+$dark-text-placeholder: rgba(255, 255, 255, 0.32);
+$dark-border-color: #404040;
+$dark-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.3);
+
+// 通用变量
+$font-size-small: 12px;
+$font-size-regular: 14px;
+$font-size-medium: 16px;
+$font-size-large: 18px;
+$font-size-xl: 20px;
+
+$border-radius-small: 2px;
+$border-radius-regular: 4px;
+$border-radius-medium: 6px;
+$border-radius-large: 8px;
+
+$spacing-xs: 4px;
+$spacing-small: 8px;
+$spacing-regular: 16px;
+$spacing-medium: 24px;
+$spacing-large: 32px;
+$spacing-xl: 48px;
+
+$transition-fast: 0.2s;
+$transition-regular: 0.3s;
+$transition-slow: 0.5s;

@@ -1,0 +1,197 @@
+@use './_variables.scss' as *;
+@use './_theme.scss' as *;
+
+// 全局工具类
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.mt-10 {
+  margin-top: $spacing-regular;
+}
+
+.mb-10 {
+  margin-bottom: $spacing-regular;
+}
+
+.ml-10 {
+  margin-left: $spacing-regular;
+}
+
+.mr-10 {
+  margin-right: $spacing-regular;
+}
+
+// 清除浮动
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+// 通用卡片样式
+.info-card,
+.api-details-card,
+.modern-card {
+  background-color: var(--color-background-primary);
+  border-radius: $border-radius-large;
+  padding: $spacing-medium;
+  margin-bottom: $spacing-medium;
+  box-shadow: var(--color-shadow);
+  transition: all $transition-regular ease;
+  border: 1px solid var(--color-border);
+}
+
+.info-card:hover,
+.api-details-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+// 现代化卡片样式
+.modern-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: none;
+}
+
+// 信息项样式
+.info-item {
+  margin-bottom: $spacing-medium;
+  display: flex;
+  align-items: flex-start;
+  padding: $spacing-regular 0;
+  border-bottom: 1px solid #f0f0f0;
+
+  &:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+  }
+}
+
+.info-label {
+  font-weight: 600;
+  margin-right: $spacing-medium;
+  min-width: 120px;
+  color: var(--color-text-primary);
+  flex-shrink: 0;
+  transition: all $transition-regular ease;
+}
+
+.info-value {
+  color: var(--color-text-primary);
+  font-size: $font-size-regular;
+  line-height: 1.6;
+  flex: 1;
+  word-break: break-word;
+  transition: color $transition-regular ease;
+}
+
+// 数据预览样式
+.test-data-preview,
+.detail-data-preview,
+.json-preview-container {
+  background-color: var(--color-background-soft);
+  border-radius: $border-radius-regular;
+  padding: $spacing-medium;
+  margin-top: $spacing-medium;
+  border: 1px solid var(--color-border);
+  overflow-x: auto;
+  font-family: 'Consolas', 'Monaco', monospace;
+  font-size: $font-size-small;
+  color: var(--color-text-primary);
+  transition: all $transition-regular ease;
+}
+
+.test-data-preview pre,
+.detail-data-preview pre,
+.json-preview-container pre {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+// JSON预览容器特殊设置
+.json-preview-container {
+  max-height: 400px;
+  margin-top: 0;
+}
+
+// 滑动过渡动画
+.slide-enter-active,
+.slide-leave-active {
+  transition: all $transition-regular ease;
+  overflow: hidden;
+}
+
+.slide-enter-from,
+.slide-leave-to {
+  max-height: 0;
+  opacity: 0;
+}
+
+.slide-enter-to,
+.slide-leave-from {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+// 全局按钮和表单元素样式
+button {
+  font-size: $font-size-regular;
+  padding: 6px 12px;
+  border-radius: $border-radius-regular;
+  cursor: pointer;
+  border: 1px solid var(--color-border);
+  @include theme-background;
+  @include theme-text;
+  transition: all $transition-regular ease;
+
+  &:hover {
+    background-color: var(--color-background-mute);
+  }
+
+  &:active {
+    background-color: var(--color-background-mute);
+  }
+}
+
+input,
+textarea,
+select {
+  font-size: $font-size-regular;
+  padding: 6px;
+  border: 1px solid var(--color-border);
+  border-radius: $border-radius-regular;
+  @include theme-background;
+  @include theme-text;
+  transition: all $transition-regular ease;
+
+  &:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px var(--color-primary);
+  }
+}
+
+// 缩小表格字体和间距
+.result-table {
+  font-size: $font-size-regular;
+
+  th,
+  td {
+    padding: 8px;
+  }
+}

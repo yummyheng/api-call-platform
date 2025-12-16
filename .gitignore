@@ -66,3 +66,7 @@ Thumbs.db
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Log configuration
+logback.xml
+logback.xml.bak

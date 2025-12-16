@@ -70,3 +70,7 @@ Thumbs.db
 # Log configuration
 logback.xml
 logback.xml.bak
+
+# Database configuration
+application-datasource.properties
+**/application-datasource.properties
